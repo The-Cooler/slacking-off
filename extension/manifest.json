@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "slacking off",
+  "version": "0.1.0",
+  "description": "终端进入空闲时打开指定视频页面，并按设置自动暂停与恢复播放。",
+  "permissions": ["storage", "tabs", "scripting"],
+  "host_permissions": ["https://www.bilibili.com/*"],
+  "optional_host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "action": {
+    "default_title": "slacking off"
+  }
+}

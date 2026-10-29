@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>slacking off - 设置</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>slacking off</h1>
+      <p class="subtitle">终端工作时，自动打开视频页面。</p>
+    </header>
+
+    <section>
+      <h2>默认打开页面</h2>
+      <p class="hint">终端进入空闲时打开的页面。</p>
+      <label class="field">
+        <span>打开</span>
+        <select id="default-target"></select>
+      </label>
+
+      <h3>自定义页面</h3>
+      <form id="add-target" class="add-target">
+        <input id="new-name" type="text" placeholder="名称，例如 哔哩哔哩" required>
+        <input id="new-url" type="url" placeholder="https://example.com" required>
+        <button type="submit">添加</button>
+      </form>
+      <p id="target-status" class="hint" role="status"></p>
+
+      <ul id="custom-list" class="custom-list"></ul>
+    </section>
+
+    <section>
+      <h2>播放</h2>
+
+      <label class="option">
+        <input id="mute-on-first-idle" type="checkbox">
+        <span class="option-text">
+          <span class="option-title">首次启动静音</span>
+          <span class="option-desc">第一个进入空闲的终端打开页面时静音；之后进入空闲的终端不改变静音状态。</span>
+        </span>
+      </label>
+
+      <label class="option">
+        <input id="restore-last-video" type="checkbox">
+        <span class="option-text">
+          <span class="option-title">回到上次的页面</span>
+          <span class="option-desc">优先打开上次停留的视频页；该页面无法打开时，改为打开默认页面。</span>
+        </span>
+      </label>
+
+      <label class="field">
+        <span>切到后台时</span>
+        <select id="pause-mode">
+          <option value="tab-hidden">标签页被切走则暂停</option>
+          <option value="window-blur">浏览器窗口失去焦点则暂停</option>
+          <option value="never">不自动暂停</option>
+        </select>
+      </label>
+    </section>
+
+    <p id="status" class="status" role="status"></p>
+  </main>
+  <script type="module" src="options.js"></script>
+</body>
+</html>

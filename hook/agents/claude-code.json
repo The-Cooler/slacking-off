@@ -1,0 +1,8 @@
+{
+  "UserPromptSubmit": "running",
+  "PreToolUse": "running",
+  "PermissionRequest": "attention",
+  "Notification": "attention",
+  "Stop": "attention",
+  "SessionEnd": "attention"
+}
